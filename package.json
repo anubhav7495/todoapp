@@ -8,6 +8,10 @@
   },
   "author": "anubhav7495",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anubhav7495/todoapp"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "compression": "^1.6.0",
@@ -18,5 +22,12 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.2.9",
     "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-env": "^0.4.4",
+    "grunt-nodemon": "^0.4.1"
   }
 }

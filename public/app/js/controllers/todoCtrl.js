@@ -28,6 +28,10 @@ angular.module('todomvc')
 				{ completed: true } : {};
 		});
 
+                $scope.$on('$viewContentLoaded', function () {
+                  document.getElementById("new-todo").focus();
+                });
+
 		$scope.addTodo = function () {
 			var newTodo = {
 				title: $scope.newTodo.trim(),
