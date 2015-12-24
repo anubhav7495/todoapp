@@ -5,14 +5,16 @@ var config = require('./config'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   session = require('express-session'),
+  MongoStore = require('connect-mongo')(session),
   ejs = require('ejs');
 
-module.exports = function() {
+module.exports = function(db) {
   var app = express();
 
   if (process.env.NODE_ENV ==='development') {
     app.use(morgan('dev'));
   } else if (process.env.NODE_ENV === 'production') {
+    app.locals.cache = 'memory';
     app.use(compress());
   }
 
@@ -25,7 +27,11 @@ module.exports = function() {
   app.use(session({
     saveUninitialized: true,
     resave: true,
-    secret: config.sessionSecret
+    secret: config.sessionSecret,
+    store: new MongoStore({
+      mongooseConnection: db.connection,
+      collection: config.sessionCollection
+    })
   }));
 
   app.set('views', 'views');

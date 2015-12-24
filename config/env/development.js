@@ -1,4 +1,5 @@
 module.exports = {
   db: 'mongodb://localhost/todoapp',
-  sessionSecret: 'developmentSessionSecret'
+  sessionSecret: 'MEAN',
+  sessionCollection: 'sessions'
 };
