@@ -79,8 +79,8 @@ angular.module('todomvc')
 				return store.api.save(todo,
 					function success(resp) {
                                                 $location.path('/api/todos');
-						//todo.id = resp.id;
-						//store.todos.push(todo);
+						todo.id = resp.id;
+						store.todos.push(todo);
 					}, function error() {
 						angular.copy(originalTodos, store.todos);
 					})
