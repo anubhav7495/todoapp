@@ -6,4 +6,4 @@ module.exports = function() {
 
   require('../models/todo.server.model');
   return db;
-}
+};

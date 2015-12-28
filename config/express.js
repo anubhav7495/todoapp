@@ -42,4 +42,4 @@ module.exports = function(db) {
   require('../routes/index.server.routes.js')(app);
   require('../routes/todo.server.routes.js')(app);
   return app;
-}
+};

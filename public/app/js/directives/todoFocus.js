@@ -5,7 +5,7 @@
  * expression it binds to evaluates to true
  */
 angular.module('todomvc')
-	.directive('todoFocus', function todoFocus($timeout) {
+	.directive('todoFocus', ["$timeout", function todoFocus($timeout) {
 		'use strict';
 
 		return function (scope, elem, attrs) {
@@ -17,4 +17,4 @@ angular.module('todomvc')
 				}
 			});
 		};
-	});
+	}]);
